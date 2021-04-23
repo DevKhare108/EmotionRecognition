@@ -1,0 +1,3 @@
+
+[Test, Train, Test_L,Train_L] =...
+        SplitingData(X,L,10);

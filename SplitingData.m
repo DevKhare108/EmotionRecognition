@@ -1,0 +1,9 @@
+function [ test, Train, test_L, Train_L]=SplitingData(X,L,n);
+    testsize=round(size(X,2)*n/100);
+    testind = randperm(size(X,2),testsize);
+    test = X(:,testind);
+    test_L = L(testind);
+    Trainind = [1:size(X,2)];
+    Trainind(testind) = [];
+    Train = X(:,Trainind);
+    Train_L = L(Trainind);
